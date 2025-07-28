@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiza Lopes - A.Arte da Fotografia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2>Luiza Lopes</h2>
+                <span>A.Arte da Fotografia</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Capturando Momentos Únicos</h1>
+            <p>Transformando suas memórias em arte através da fotografia</p>
+            <button class="cta-button" onclick="scrollToSection('portfolio')">Ver Portfólio</button>
+        </div>
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <i class="fas fa-camera"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Olá! Sou Luiza Lopes, fotógrafa profissional lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Clientes Satisfeitos</p>
+                        </div>
+                        <div class="stat">
+                            <h3>8+</h3>
+                            <p>Anos de Experiência</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Casamentos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Portfólio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="family">Ensaio Familiar</button>
+                <button class="filter-btn" data-filter="jewelry">Joias</button>
+                <button class="filter-btn" data-filter="city">Cinematografia POA</button>
+                <button class="filter-btn" data-filter="museum">Museu do Inter</button>
+                <button class="filter-btn" data-filter="fans">Torcida do Inter</button>
+                <button class="filter-btn" data-filter="book_col">Book colorado</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="family">
+                    <div class="portfolio-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Ensaio Familiar</h3>
+                        <p>Dia das Mães</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="jewelry">
+                    <div class="portfolio-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Joias</h3>
+                        <p>Loja tal</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="city">
+                    <div class="portfolio-image">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Cinematografia</h3>
+                        <p>Fotos por Porto Alegre</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="museum">
+                    <div class="portfolio-image">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Museu do Inter</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="fans">
+                    <div class="portfolio-image">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Torcida do Inter</h3>
+                        <p>Festa do morangoKKKKK</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="book_col">
+                    <div class="portfolio-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Book Colorado</h3>
+                        <p>15 anos da fulana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Book</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <ul>
+                        <li>tantas fts</li>
+                        <li>Álbum digital personalizado</li> 
+                        <li>Entrega em até 30 dias</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Produtos</h3>
+                    <p>Retratos profissionais que destacam seu produto para destaque de seu negócio</p>
+                    <ul>
+                        <li>Sessão de 2 horas</li>
+                        <li>20 fotos editadas</li>
+                        <li>Estudio ou no local</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Ensaios</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    <ul>
+                        <li>Fotos espontâneas</li>
+                        <li>Fotos em tempo real</li>
+                        <li>Entrega expressa disponível</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Vamos Conversar</h3>
+                    <p>Estou ansiosa para conhecer sua história e ajudar a criar memórias inesquecíveis através da fotografia.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(51) 9 8550-0881</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>atendimento.luizalopes@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Porto Alegre, RS</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/a.artedafotografia?igsh=czdhN3RmOHI2YzRp"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1CM8PfFGmy/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/51985500881"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Selecione o serviço</option>
+                            <option value="book_col">Book</option>
+                            <option value="jewelry">Produtos</option>
+                            <option value="family">Ensaios</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Conte-me sobre seu projeto" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Luiza Lopes</h3>
+                    <p>Fotografia Profissional</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Início</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#portfolio">Portfólio</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#contact">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luiza Lopes A.Arte da Fotografia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
