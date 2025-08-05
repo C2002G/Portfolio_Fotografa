@@ -700,7 +700,7 @@ body {
         max-width: 100%;
         width: 100%;
         margin: 0 auto;
-        padding: 3rem 0 2rem 0; /* aumenta espaço acima e abaixo */
+        padding: 6rem 0 2rem 0; /* aumenta espaço acima e abaixo */
         display: flex;
         flex-direction: column;
         align-items: center;
