@@ -48,9 +48,9 @@ filterButtons.forEach(button => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         // Adiciona active class ao botão clicado
         button.classList.add('active');
-        
+
         const filter = button.getAttribute('data-filter');
-        
+
         portfolioItems.forEach(item => {
             if (filter === 'all' || item.getAttribute('data-category') === filter) {
                 item.style.display = 'block';
@@ -68,9 +68,9 @@ filterButtons.forEach(button => {
 // Formulário de Contato
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     // Pega os valores do formulário
     const formData = new FormData(this);
     const name = formData.get('name');
@@ -78,20 +78,20 @@ contactForm.addEventListener('submit', function(e) {
     const phone = formData.get('phone');
     const service = formData.get('service');
     const message = formData.get('message');
-    
+
     // Validação básica
     if (!name || !email || !service || !message) {
         showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
         return;
     }
-    
+
     // Simula envio do formulário
     const submitBtn = this.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
-    
+
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
-    
+
     // Simula delay de envio
     setTimeout(() => {
         showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
@@ -108,7 +108,7 @@ function showNotification(message, type = 'info') {
     if (existingNotification) {
         existingNotification.remove();
     }
-    
+
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -117,7 +117,7 @@ function showNotification(message, type = 'info') {
             <button class="notification-close">&times;</button>
         </div>
     `;
-    
+
     // Adiciona estilos
     notification.style.cssText = `
         position: fixed;
@@ -133,21 +133,21 @@ function showNotification(message, type = 'info') {
         transition: transform 0.3s ease;
         max-width: 400px;
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Anima entrada
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Botão fechar
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
         notification.style.transform = 'translateX(400px)';
         setTimeout(() => notification.remove(), 300);
     });
-    
+
     // Auto remove após 5 segundos
     setTimeout(() => {
         if (notification.parentNode) {
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     const timer = setInterval(() => {
         start += increment;
         if (start >= target) {
@@ -215,7 +215,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
-    
+
     if (hero && heroContent) {
         const rate = scrolled * -0.5;
         heroContent.style.transform = `translateY(${rate}px)`;
@@ -238,26 +238,26 @@ function isValidPhone(phone) {
 document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
-    
+
     if (emailInput) {
         emailInput.addEventListener('blur', () => {
-                if (emailInput.value && !isValidEmail(emailInput.value)) {
-        emailInput.style.borderColor = '#8B0000';
-        showNotification('Por favor, insira um email válido.', 'error');
-    } else {
-        emailInput.style.borderColor = '#e1e8ed';
-    }
+            if (emailInput.value && !isValidEmail(emailInput.value)) {
+                emailInput.style.borderColor = '#8B0000';
+                showNotification('Por favor, insira um email válido.', 'error');
+            } else {
+                emailInput.style.borderColor = '#e1e8ed';
+            }
         });
     }
-    
+
     if (phoneInput) {
         phoneInput.addEventListener('blur', () => {
-                if (phoneInput.value && !isValidPhone(phoneInput.value)) {
-        phoneInput.style.borderColor = '#8B0000';
-        showNotification('Por favor, insira um telefone válido.', 'error');
-    } else {
-        phoneInput.style.borderColor = '#e1e8ed';
-    }
+            if (phoneInput.value && !isValidPhone(phoneInput.value)) {
+                phoneInput.style.borderColor = '#8B0000';
+                showNotification('Por favor, insira um telefone válido.', 'error');
+            } else {
+                phoneInput.style.borderColor = '#e1e8ed';
+            }
         });
     }
 });
@@ -295,10 +295,10 @@ function preloadImages() {
 // Inicializa quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', () => {
     preloadImages();
-    
+
     // Adiciona classe para animações CSS
     document.body.classList.add('loaded');
-    
+
     // Mostra uma mensagem de boas-vindas
     setTimeout(() => {
         showNotification('Bem-vindo ao site da Luiza Lopes A.Arte da Fotografia! 📸', 'info');
@@ -349,9 +349,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     nextBtn.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    slideTo(index);
-});
+        index = (index + 1) % slides.length;
+        slideTo(index);
+    });
 
     // Inicializa
     slideTo(0);

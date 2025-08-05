@@ -56,7 +56,7 @@ body {
     gap: 1rem;
 }
 
-.logo{
+.logo {
     margin-top: 0.5rem;
     width: 60px;
     height: auto;
@@ -68,12 +68,12 @@ body {
     align-items: flex-start;
 }
 
-.brand-center h2{
+.brand-center h2 {
     margin-bottom: 0.3rem;
 }
 
 
-.arte{
+.arte {
     width: 234px;
     height: auto;
     margin-top: -0.8rem;
@@ -227,7 +227,7 @@ body {
 .hero-image .slider-dots {
     display: flex;
     gap: 0.3rem;
-    
+
     justify-content: center;
     margin-top: 1rem;
 }
@@ -759,6 +759,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
