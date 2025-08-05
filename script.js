@@ -416,9 +416,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     nextBtn.addEventListener('click', () => {
-        index = Math.min(index + 1, slides.length - 1);
-        slideTo(index);
-    });
+    index = (index + 1) % slides.length;
+    slideTo(index);
+});
 
     // Inicializa
     slideTo(0);
