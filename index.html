@@ -42,9 +42,27 @@
             <button class="cta-button" onclick="scrollToSection('portfolio')">Ver Portfólio</button>
         </div>
         <div class="hero-image">
-            <div class="image-placeholder">
-                <i class="fas fa-camera"></i>
+            <div id="slider-hero" class="slider">
+                <button class="slider-btn slider-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-container">
+                    <ul class="slider-track">
+                        <!-- Imagens do slider -->
+                        <li style="background-image: url('img/Slider/slide1.jpg');"></li>
+                        <li style="background-image: url('img/Slider/slide2.jpg');"></li>
+                        <li style="background-image: url('img/Slider/slide3.jpg');"></li>
+                        <li style="background-image: url('img/Slider/slide4.jpg');"></li>
+                        <li style="background-image: url('img/Slider/slide5.jpg');"></li>
+                        <li style="background-image: url('img/Slider/slide6.jpg');"></li>
+                        <!-- Adicione mais conforme necessário -->
+                    </ul>
+                </div>
+                <button class="slider-btn slider-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
+            <div class="slider-dots"></div>
         </div>
     </section>
 
@@ -277,4 +295,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

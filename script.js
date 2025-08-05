@@ -384,3 +384,42 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = darkThemeStyles;
 document.head.appendChild(styleSheet); 
 */
+
+// Slider Hero
+document.addEventListener('DOMContentLoaded', function () {
+    const track = document.querySelector('#slider-hero .slider-track');
+    const slides = track.querySelectorAll('li');
+    const prevBtn = document.querySelector('#slider-hero .slider-prev');
+    const nextBtn = document.querySelector('#slider-hero .slider-next');
+    const dotsContainer = document.querySelector('.hero-image .slider-dots');
+    let index = 0;
+
+    function slideTo(i) {
+        track.style.transform = `translateX(-${i * 100}%)`;
+        index = i;
+        updateDots();
+    }
+
+    function updateDots() {
+        dotsContainer.innerHTML = '';
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            if (i === index) dot.classList.add('active');
+            dot.addEventListener('click', () => slideTo(i));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        index = Math.max(index - 1, 0);
+        slideTo(index);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        index = Math.min(index + 1, slides.length - 1);
+        slideTo(index);
+    });
+
+    // Inicializa
+    slideTo(0);
+});
