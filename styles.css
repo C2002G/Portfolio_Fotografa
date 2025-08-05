@@ -50,11 +50,35 @@ body {
     margin-bottom: -5px;
 }
 
-.nav-brand span {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 300;
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
+
+.logo{
+    margin-top: 0.5rem;
+    width: 60px;
+    height: auto;
+}
+
+.brand-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.brand-center h2{
+    margin-bottom: 0.3rem;
+}
+
+
+.arte{
+    width: 234px;
+    height: auto;
+    margin-top: -0.8rem;
+}
+
 
 .nav-menu {
     display: flex;
