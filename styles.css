@@ -668,7 +668,7 @@ body {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .hamburger {
         display: flex;
     }
@@ -696,8 +696,37 @@ body {
         padding: 2rem 1rem;
     }
 
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem 0 2rem 0; /* aumenta espaço acima e abaixo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* centraliza verticalmente */
+        text-align: center;
+        gap: 1.2rem; /* espaço entre h1, p e botão */
+    }
+
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        opacity: 1;
+    }
+
+    .cta-button {
+        margin-top: 0.5rem;
+        width: auto;
+        min-width: 180px;
+        font-size: 1rem;
+        padding: 1rem 2rem;
     }
 
     .about-content {
