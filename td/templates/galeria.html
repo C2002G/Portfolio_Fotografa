@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ categoria }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <style>
+      body {
+        background: #fff;
+        margin: 0;
+      }
+      .gal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1em 2em 0 2em;
+      }
+      .gal-title {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 0.2em;
+      }
+      .gal-back {
+        font-size: 1.5em;
+        color: #c00;
+        text-decoration: none;
+        margin-right: 1em;
+      }
+      .gal-menu {
+        position: relative;
+      }
+      .gal-menu-btn {
+        background: none;
+        border: none;
+        font-size: 2em;
+        cursor: pointer;
+        color: #333;
+      }
+      .gal-menu-list {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 2em;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #0002;
+        min-width: 120px;
+        z-index: 10;
+      }
+      .gal-menu-list.open {
+        display: block;
+      }
+      .gal-menu-list a {
+        display: block;
+        padding: 8px 16px;
+        color: #333;
+        text-decoration: none;
+      }
+      .gal-menu-list a:hover {
+        background: #f7f7f7;
+      }
+      .gal-pins {
+        columns: 4 300px;
+        column-gap: 1em;
+        padding: 2em;
+      }
+      .gal-pin {
+        break-inside: avoid;
+        margin-bottom: 1em;
+        box-shadow: 0 2px 8px #0001;
+        border-radius: 8px;
+        background: #fafafa;
+        padding: 4px;
+      }
+      .gal-pin img {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+      }
+      @media (max-width: 1200px) {
+        .gal-pins {
+          columns: 3 200px;
+        }
+      }
+      @media (max-width: 900px) {
+        .gal-pins {
+          columns: 3 150px;
+        }
+      }
+      @media (max-width: 600px) {
+        .gal-header {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1em;
+        }
+        .gal-title {
+          font-size: 1.3em;
+        }
+        .gal-pins {
+          columns: 2 100px;
+          padding: 1em;
+        }
+      }
+      @media (max-width: 400px) {
+        .gal-pins {
+          columns: 2 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gal-header">
+      <div>
+        <a href="/" class="gal-back">&#8592;</a>
+        <div class="gal-title">{{ categoria }}</div>
+        <div style="font-size: 0.9em; color: #666">
+          {{ imagens|length }} Fotos
+        </div>
+      </div>
+      <div class="gal-menu">
+        <button class="gal-menu-btn" onclick="toggleMenu()">&#8942;</button>
+        <div class="gal-menu-list" id="galMenuList">
+          {% for cat in categorias %} {% if cat != categoria %}
+          <a
+            href="#"
+            onclick="window.open('{{ url_for('galeria', categoria=cat) }}', '_blank'); return false;"
+            >{{ cat }}</a
+          >
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="gal-pins">
+      {% for img in imagens %}
+      <div class="gal-pin">
+        <img
+          src="{{ url_for('static', filename='img/' ~ categoria ~ '/' ~ img) }}"
+          alt="{{ categoria }}"
+        />
+      </div>
+      {% endfor %}
+    </div>
+    <select name="categoria">
+      {% for cat in categorias %}
+          <option value="{{ cat }}" {% if cat == categoria %}selected{% endif %}>{{ cat }}</option>
+      {% endfor %}
+    </select>
+    <script>
+      function toggleMenu() {
+        document.getElementById("galMenuList").classList.toggle("open");
+      }
+      // Fecha menu ao clicar fora
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".gal-menu")) {
+          document.getElementById("galMenuList").classList.remove("open");
+        }
+      });
+    </script>
+  </body>
+</html>

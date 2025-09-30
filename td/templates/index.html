@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luiza Lopes - A Arte da Fotografia</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <img
+            src="{{ url_for('static', filename='img/logo/logo.png') }}"
+            alt="Luiza Lopes"
+            class="logo"
+          />
+          <div class="brand-center">
+            <h2>Luiza Lopes</h2>
+            <img
+              src="{{ url_for('static', filename='img/logo/arte.png') }}"
+              alt="Luiza Lopes"
+              class="arte"
+            />
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Capturando Momentos Únicos</h1>
+        <p>Transformando suas memórias em arte através da fotografia</p>
+        <button class="cta-button" onclick="scrollToSection('portfolio')">
+          Ver Portfólio
+        </button>
+      </div>
+      <div class="hero-image">
+        <div id="slider-hero" class="slider">
+          <button class="slider-btn slider-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-container">
+            <ul class="slider-track">
+              <!-- Imagens do slider -->
+              <li
+                style="background-image: url('{{ url_for('static', filename='img/slider/slide1.jpg') }}');"
+              ></li>
+              <li
+                style="background-image: url('{{ url_for('static', filename='img/Slider/slide8.jpg') }}');"
+              ></li>
+              <li
+                style="background-image: url('{{ url_for('static', filename='img/Slider/slide3.jpg') }}');"
+              ></li>
+              <li
+                style="background-image: url('{{ url_for('static', filename='img/Slider/slide4.jpg') }}');"
+              ></li>
+              <li
+                style="background-image: url('{{ url_for('static', filename='img/Slider/slide5.jpg') }}');"
+              ></li>
+              <li
+                style="background-image: url('{{ url_for('static', filename='img/Slider/slide6.jpg') }}');"
+              ></li>
+              <!-- Adicione mais conforme necessário -->
+            </ul>
+          </div>
+          <button class="slider-btn slider-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Sobre Mim</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Olá! Sou Luiza Lopes, fotógrafa profissional lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Quisquam, quos.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <h3>500+</h3>
+                <p>Clientes Satisfeitos</p>
+              </div>
+              <div class="stat">
+                <h3>8+</h3>
+                <p>Anos de Experiência</p>
+              </div>
+              <div class="stat">
+                <h3>50+</h3>
+                <p>Casamentos</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="image-placeholder">
+              <img
+                src="{{ url_for('static', filename='img/lindona.jpg') }}"
+                alt="Luiza Lopes"
+                class="about-photo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2>Portfólio</h2>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="family">
+            Ensaio Familiar
+          </button>
+          <button class="filter-btn" data-filter="jewelry">Joias</button>
+          <button class="filter-btn" data-filter="city">
+            Cinematografia POA
+          </button>
+          <button class="filter-btn" data-filter="museum">
+            Museu do Inter
+          </button>
+          <button class="filter-btn" data-filter="fans">
+            Torcida do Inter
+          </button>
+          <button class="filter-btn" data-filter="book_col">
+            Book colorado
+          </button>
+        </div>
+        <div class="portfolio-grid">
+          <div
+            class="portfolio-item"
+            data-category="family"
+            onclick="window.open('{{ url_for('galeria', categoria='Familiares') }}', '_blank')"
+          >
+            <div class="portfolio-image">
+              <img
+                src="{{ url_for('static', filename='img/Familiares/IMG_9146.JPG') }}"
+                alt="Ensaio Familiar - Luiza Lopes"
+                class="portfolio-photo"
+              />
+            </div>
+            <div class="portfolio-overlay">
+              <h3>Ensaio Familiar</h3>
+              <p>Dia das Mães</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item"
+            data-category="jewelry"
+            onclick="window.open('{{ url_for('galeria', categoria='Joias') }}', '_blank')"
+          >
+            <div class="portfolio-image">
+              <img
+                src="{{ url_for('static', filename='img/Joias/IMG_3703.jpg') }}"
+                alt="Joia-Luiza Lopes"
+                class="portfolio-photo"
+              />
+            </div>
+            <div class="portfolio-overlay">
+              <h3>Joias</h3>
+              <p>Loja tal</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item"
+            data-category="city"
+            onclick="window.open('{{ url_for('galeria', categoria='Cinematografia') }}', '_blank')"
+          >
+            <div class="portfolio-image">
+              <img
+                src="{{ url_for('static', filename='img/POA/Poa1.jpg') }}"
+                alt="POA - Luiza Lopes"
+                class="portfolio-photo"
+              />
+            </div>
+            <div class="portfolio-overlay">
+              <h3>Cinematografia</h3>
+              <p>Fotos por Porto Alegre</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item"
+            data-category="museum"
+            onclick="window.open('{{ url_for('galeria', categoria='Museu') }}', '_blank')"
+          >
+            <div class="portfolio-image">
+              <img
+                src="{{ url_for('static', filename='img/Museu/museu1.jpg') }}"
+                alt="Museu - Luiza Lopes"
+                class="portfolio-photo"
+              />
+            </div>
+            <div class="portfolio-overlay">
+              <h3>Museu do Inter</h3>
+            </div>
+          </div>
+          <div
+            class="portfolio-item"
+            data-category="fans"
+            onclick="window.open('{{ url_for('galeria', categoria='Torcida') }}', '_blank')"
+          >
+            <div class="portfolio-image">
+              <img
+                src="{{ url_for('static', filename='img/Torcida/torcida1.jpg') }}"
+                alt="Torcida - Luiza Lopes"
+                class="portfolio-photo"
+              />
+            </div>
+            <div class="portfolio-overlay">
+              <h3>Torcida do Inter</h3>
+              <p>Festa do morangoKKKKK</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item"
+            data-category="book_col"
+            onclick="window.open('{{ url_for('galeria', categoria='BookColorado') }}', '_blank')"
+          >
+            <div class="portfolio-image">
+              <img
+                src="{{ url_for('static', filename='img/BookColorado/book1.jpg') }}"
+                alt="book - Luiza Lopes"
+                class="portfolio-photo"
+              />
+            </div>
+            <div class="portfolio-overlay">
+              <h3>Book Colorado</h3>
+              <p>15 anos da fulana</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Serviços</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Book</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos.
+            </p>
+            <ul>
+              <li>tantas fts</li>
+              <li>Álbum digital personalizado</li>
+              <li>Entrega em até 30 dias</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Produtos</h3>
+            <p>
+              Retratos profissionais que destacam seu produto para destaque de
+              seu negócio
+            </p>
+            <ul>
+              <li>Sessão de 2 horas</li>
+              <li>20 fotos editadas</li>
+              <li>Estudio ou no local</li>
+            </ul>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-glass-cheers"></i>
+            </div>
+            <h3>Ensaios</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos.
+            </p>
+            <ul>
+              <li>Fotos espontâneas</li>
+              <li>Fotos em tempo real</li>
+              <li>Entrega expressa disponível</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Entre em Contato</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Vamos Conversar</h3>
+            <p>
+              Estou ansiosa para conhecer sua história e ajudar a criar memórias
+              inesquecíveis através da fotografia.
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>(51) 9 8550-0881</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>atendimento.luizalopes@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Porto Alegre, RS</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/a.artedafotografia?igsh=czdhN3RmOHI2YzRp"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/share/1CM8PfFGmy/?mibextid=wwXIfr"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://wa.me/51985500881" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://www.pinterest.com/LuizaLopesFotografa/"
+                target="_blank"
+                ><i class="fab fa-pinterest"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@a.artedafotografia"
+                target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Seu nome"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Seu email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Seu telefone"
+              />
+            </div>
+            <div class="form-group">
+              <select id="service" name="service" required>
+                <option value="">Selecione o serviço</option>
+                <option value="book_col">Book</option>
+                <option value="jewelry">Produtos</option>
+                <option value="family">Ensaios</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Conte-me sobre seu projeto"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Mensagem</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3>Luiza Lopes</h3>
+            <p>Fotografia Profissional</p>
+          </div>
+          <div class="footer-links">
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#services">Serviços</a>
+            <a href="#contact">Contato</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Luiza Lopes A.Arte da Fotografia. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

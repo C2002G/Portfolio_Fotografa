@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Painel Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <style>
+      body {
+        background: #f7f7f7;
+        margin: 0;
+      }
+      .admin-container {
+        max-width: 900px;
+        margin: 2em auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #0002;
+        padding: 2em;
+      }
+      .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+      }
+      .admin-header h2 {
+        margin: 0;
+        font-size: 1.5em;
+      }
+      .admin-header a {
+        color: #c00;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .admin-upload {
+        margin-bottom: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        align-items: center;
+      }
+      .admin-upload select,
+      .admin-upload input[type="file"] {
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      .admin-upload button {
+        background: #c00;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .flash {
+        color: #c00;
+        margin-bottom: 1em;
+      }
+      .admin-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1em;
+      }
+      .admin-item {
+        background: #fafafa;
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 1px 4px #0001;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .admin-item img {
+        width: 100%;
+        max-width: 120px;
+        border-radius: 6px;
+        margin-bottom: 6px;
+      }
+      .admin-item input[type="checkbox"] {
+        margin-bottom: 6px;
+      }
+      .admin-item form {
+        margin-top: 6px;
+      }
+      .multi-delete-btn {
+        background: #c00;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-top: 1em;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        .admin-container {
+          padding: 1em;
+        }
+        .admin-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5em;
+        }
+        .admin-grid {
+          grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        }
+        .admin-item img {
+          max-width: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-container">
+      <div class="admin-header">
+        <h2>Painel da Fotógrafa</h2>
+        <a href="{{ url_for('logout') }}">Sair</a>
+      </div>
+      {% if flash_message %}
+      <div class="flash">{{ flash_message }}</div>
+      {% endif %}
+      <form
+        class="admin-upload"
+        method="post"
+        action="{{ url_for('upload') }}"
+        enctype="multipart/form-data"
+      >
+        <select name="categoria" class="admin-select">
+          {% for cat in categorias %}
+          <option value="{{ cat }}" {% if cat == categoria %}selected{% endif %}>
+            {{ cat }}
+          </option>
+          {% endfor %}
+        </select>
+        <input
+          type="file"
+          name="arquivo"
+          accept="image/*"
+          multiple
+          onchange="previewFiles(this)"
+        />
+        <div id="preview"></div>
+        <button type="submit">Enviar</button>
+      </form>
+      <form method="get" action="{{ url_for('admin') }}">
+        <select
+          name="categoria"
+          class="admin-select"
+          onchange="this.form.submit()"
+        >
+          {{ categorias_html|safe }}
+        </select>
+      </form>
+      <form
+        method="post"
+        action="{{ url_for('delete_multiple', categoria=categoria) }}"
+        id="multiDeleteForm"
+      >
+        <div class="admin-grid">{{ grid_html|safe }}</div>
+        <button
+          type="submit"
+          class="multi-delete-btn"
+          onclick="return confirm('Remover as fotos selecionadas?');"
+        >
+          Remover Selecionadas
+        </button>
+      </form>
+    </div>
+    <script>
+      function previewFiles(input) {
+        const preview = document.getElementById("preview");
+        preview.innerHTML = "";
+        Array.from(input.files).forEach((file) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.style.maxWidth = "60px";
+            img.style.margin = "4px";
+            preview.appendChild(img);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    </script>
+  </body>
+</html>
