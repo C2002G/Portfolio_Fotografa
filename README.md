@@ -2,14 +2,14 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)
-![Status](https://img.shields.io/badge/Status-Ativo-brightgreen.svg)
-![Demo](https://img.shields.io/badge/Demo-Em%20Breve-orange.svg)
+![Status](https://img.shields.io/badge/Status-Online-brightgreen.svg)
+![Railway](https://img.shields.io/badge/Deploy-Railway-blueviolet.svg)
 
 > **Portfólio fotográfico profissional com sistema administrativo completo para gerenciamento de imagens e categorias.**
 
 ## 🌟 **Demo Online**
 
-🔗 **[Ver Demo Funcionando](https://portfolio-luiza.pythonanywhere.com)** _(Em breve)_
+🔗 **[Ver Portfolio Online](https://portfolio-luiza-lopes.up.railway.app)** _(Site funcionando!)_
 
 ## 📋 **Sobre o Projeto**
 
@@ -50,8 +50,9 @@ Este é um portfólio fotográfico desenvolvido em Flask, criado para apresentar
 - **Backend**: Python 3.8+ com Flask 2.3.3
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **Segurança**: python-dotenv para variáveis de ambiente
-- **Deploy**: Configurado para PythonAnywhere
+- **Deploy**: Railway com deploy automático via GitHub
 - **Estilo**: CSS Grid, Flexbox, Design Responsivo
+- **Servidor**: Gunicorn para produção
 
 ## 📦 **Instalação e Execução**
 
@@ -172,6 +173,8 @@ Portfolio_Fotografa/
 - [ ] Analytics de visualizações
 - [ ] PWA (Progressive Web App)
 - [ ] Otimização automática de imagens
+- [ ] Domínio personalizado
+- [ ] Sistema de watermark automático
 
 ## 🤝 **Contribuição**
 
