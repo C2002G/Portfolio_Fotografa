@@ -270,7 +270,7 @@ body {
   margin-top: 2rem;
 }
 
-.stat {
+/* .stat {
   text-align: center;
 }
 
@@ -283,7 +283,7 @@ body {
 .stat p {
   color: #666;
   font-size: 0.9rem;
-}
+} */
 
 .about-image {
   display: flex;

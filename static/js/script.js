@@ -190,25 +190,25 @@ function animateCounter(element, target, duration = 2000) {
   }, 16);
 }
 
-// Anima contadores quando a seção about estiver visível
-const aboutSection = document.querySelector(".about");
-const aboutObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const counters = document.querySelectorAll(".stat h3");
-        counters.forEach((counter) => {
-          const target = parseInt(counter.textContent);
-          animateCounter(counter, target);
-        });
-        aboutObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
+// // Anima contadores quando a seção about estiver visível
+// const aboutSection = document.querySelector(".about");
+// const aboutObserver = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         const counters = document.querySelectorAll(".stat h3");
+//         counters.forEach((counter) => {
+//           const target = parseInt(counter.textContent);
+//           animateCounter(counter, target);
+//         });
+//         aboutObserver.unobserve(entry.target);
+//       }
+//     });
+//   },
+//   { threshold: 0.5 }
+// );
 
-aboutObserver.observe(aboutSection);
+// aboutObserver.observe(aboutSection);
 
 // Efeito parallax suave no hero
 window.addEventListener("scroll", () => {
