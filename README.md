@@ -7,9 +7,6 @@
 
 > **Portfólio fotográfico profissional com sistema administrativo completo para gerenciamento de imagens e categorias.**
 
-## 🌟 **Demo Online**
-
-🔗 **[Ver Portfolio Online](https://portfolio-luiza-lopes.up.railway.app)** _(Site funcionando!)_
 
 ## 📋 **Sobre o Projeto**
 
