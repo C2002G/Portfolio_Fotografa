@@ -10,7 +10,70 @@ IMG_FOLDER = os.path.join(app.root_path, "static", "img")
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    # Listar categorias disponíveis para o portfólio
+    categorias = [
+        d
+        for d in os.listdir(IMG_FOLDER)
+        if os.path.isdir(os.path.join(IMG_FOLDER, d)) and d != "logo"
+    ]
+
+    # Mapear categorias para nomes de exibição e filtros
+    categoria_info = {
+        "BookColorado": {
+            "nome": "Book Colorido",
+            "filtro": "colorful",
+            "descricao": "Ensaio com energia",
+        },
+        "Familiares": {
+            "nome": "Ensaio Familiar",
+            "filtro": "family",
+            "descricao": "Momentos em família",
+        },
+        "Joias": {
+            "nome": "Joias",
+            "filtro": "jewelry",
+            "descricao": "Beleza e elegância",
+        },
+        "POA": {
+            "nome": "Cinematografia POA",
+            "filtro": "city",
+            "descricao": "Fotos por Porto Alegre",
+        },
+        "Museu": {
+            "nome": "Museu do Inter",
+            "filtro": "museum",
+            "descricao": "História colorada",
+        },
+        "Torcida": {
+            "nome": "Torcida do Inter",
+            "filtro": "fans",
+            "descricao": "Paixão vermelha",
+        },
+        "Renovação": {
+            "nome": "Renovação",
+            "filtro": "renovation",
+            "descricao": "Transformação e beleza",
+        },
+        "Slider": {
+            "nome": "Destaques",
+            "filtro": "highlights",
+            "descricao": "Melhores momentos",
+        },
+    }
+
+    # Obter primeira imagem de cada categoria para preview
+    for categoria in categorias:
+        pasta = os.path.join(IMG_FOLDER, categoria)
+        if os.path.exists(pasta):
+            imagens = [
+                f for f in os.listdir(pasta) if os.path.isfile(os.path.join(pasta, f))
+            ]
+            if imagens and categoria in categoria_info:
+                categoria_info[categoria]["imagem"] = imagens[0]
+
+    return render_template(
+        "index.html", categorias=categorias, categoria_info=categoria_info
+    )
 
 
 @app.route("/admin", methods=["GET", "POST"])
