@@ -30,31 +30,7 @@
         text-decoration: none;
         margin-right: 1em;
       }
-      .gal-menu {
-        position: relative;
-      }
-      .gal-menu-btn {
-        background: none;
-        border: none;
-        font-size: 2em;
-        cursor: pointer;
-        color: #333;
-      }
-      .gal-menu-list {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 2em;
-        background: #fff;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px #0002;
-        min-width: 120px;
-        z-index: 10;
-      }
-      .gal-menu-list.open {
-        display: block;
-      }
+
       .gal-menu-list a {
         display: block;
         padding: 8px 16px;
@@ -122,18 +98,7 @@
           {{ imagens|length }} Fotos
         </div>
       </div>
-      <div class="gal-menu">
-        <button class="gal-menu-btn" onclick="toggleMenu()">&#8942;</button>
-        <div class="gal-menu-list" id="galMenuList">
-          {% for cat in categorias %} {% if cat != categoria %}
-          <a
-            href="#"
-            onclick="window.open('{{ url_for('galeria', categoria=cat) }}', '_blank'); return false;"
-            >{{ cat }}</a
-          >
-          {% endif %} {% endfor %}
-        </div>
-      </div>
+    </div>
     </div>
     <div class="gal-pins">
       {% for img in imagens %}
@@ -150,16 +115,5 @@
           <option value="{{ cat }}" {% if cat == categoria %}selected{% endif %}>{{ cat }}</option>
       {% endfor %}
     </select>
-    <script>
-      function toggleMenu() {
-        document.getElementById("galMenuList").classList.toggle("open");
-      }
-      // Fecha menu ao clicar fora
-      document.addEventListener("click", function (e) {
-        if (!e.target.closest(".gal-menu")) {
-          document.getElementById("galMenuList").classList.remove("open");
-        }
-      });
-    </script>
   </body>
 </html>

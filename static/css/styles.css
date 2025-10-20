@@ -111,20 +111,6 @@ body {
   width: 100%;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #8b0000;
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -668,10 +654,6 @@ body {
 
 /* Responsividade */
 @media (max-width: 480px) {
-  .hamburger {
-    display: flex;
-  }
-
   .nav-menu {
     position: fixed;
     left: -100%;

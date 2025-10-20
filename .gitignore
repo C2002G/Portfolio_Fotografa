@@ -26,3 +26,7 @@ Thumbs.db
 # Arquivos temporários
 *.tmp
 *.temp
+
+# Documentação de deploy (opcional - remover se quiser versionar)
+DEPLOY_GRATUITO.md
+MANUTENCAO_RAPIDA.md
