@@ -1,8 +1,18 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
+from dotenv import load_dotenv
+
+# Carregar variáveis de ambiente
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "Balu2022"
+
+# Configurações de segurança via variáveis de ambiente
+app.secret_key = os.getenv("SECRET_KEY", "dev-key-change-in-production")
+
+# Credenciais admin via variáveis de ambiente
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "change-this-password")
 
 # Pasta base das imagens
 IMG_FOLDER = os.path.join(app.root_path, "static", "img")
@@ -175,7 +185,7 @@ def login():
     if request.method == "POST":
         usuario = request.form["usuario"]
         senha = request.form["senha"]
-        if usuario == "admin" and senha == "Balu2022":
+        if usuario == ADMIN_USERNAME and senha == ADMIN_PASSWORD:
             session["logged_in"] = True
             return redirect(url_for("admin"))
         else:
