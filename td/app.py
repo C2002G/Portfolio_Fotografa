@@ -31,12 +31,6 @@ def admin():
             set(f for f in os.listdir(pasta) if os.path.isfile(os.path.join(pasta, f)))
         )
 
-    categorias_html = "".join(
-        [
-            f'<option value="{cat}" {"selected" if cat == categoria else ""}>{cat}</option>'
-            for cat in categorias
-        ]
-    )
     grid_html = ""
     for img in sorted(set(imagens)):
         img_url = url_for("static", filename=f"img/{categoria}/{img}")
