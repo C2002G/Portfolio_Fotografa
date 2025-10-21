@@ -104,31 +104,6 @@ Para acessar o painel administrativo:
 2. Use as credenciais configuradas no arquivo `.env`
 3. Gerencie imagens em: `http://localhost:5000/admin`
 
-## 🌐 **Deploy no PythonAnywhere**
-
-### **Configuração Gratuita**
-
-1. **Crie uma conta** em [pythonanywhere.com](https://pythonanywhere.com)
-
-2. **Upload dos arquivos** via dashboard ou git
-
-3. **Configure variáveis de ambiente** no console Bash:
-
-   ```bash
-   echo 'export SECRET_KEY="sua_chave_secreta"' >> ~/.bashrc
-   echo 'export ADMIN_USERNAME="admin"' >> ~/.bashrc
-   echo 'export ADMIN_PASSWORD="sua_senha"' >> ~/.bashrc
-   source ~/.bashrc
-   ```
-
-4. **Configure a Web App**:
-
-   - Python version: 3.10
-   - WSGI file: `wsgi.py`
-   - Static files: `/static/` → `/home/yourusername/Portfolio_Fotografa/static/`
-
-5. **Reload** a aplicação e acesse sua URL!
-
 ## 📁 **Estrutura do Projeto**
 
 ```
@@ -183,14 +158,10 @@ Contribuições são sempre bem-vindas! Sinta-se à vontade para:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abrir um Pull Request
 
-## 📄 **Licença**
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
 ## 📞 **Contato**
 
 **Desenvolvedor**: [C2002G](https://github.com/C2002G)  
-**Portfolio da Fotógrafa**: [Luiza Lopes](mailto:contato@luizalopes.com.br)
+**Portfolio da Fotógrafa**: [Luiza Lopes](**https://luizalopesfotografia.up.railway.app/**)
 
 ---
 
