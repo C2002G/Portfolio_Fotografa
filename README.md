@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)
 ![Status](https://img.shields.io/badge/Status-Online-brightgreen.svg)
-![Railway](https://img.shields.io/badge/Deploy-Railway-blueviolet.svg)
+![Fly.io](https://img.shields.io/badge/Deploy-Fly.io-blueviolet.svg)
 
 > **Portfólio fotográfico profissional com sistema administrativo completo para gerenciamento de imagens e categorias.**
 
