@@ -47,7 +47,7 @@ Este é um portfólio fotográfico desenvolvido em Flask, criado para apresentar
 - **Backend**: Python 3.8+ com Flask 2.3.3
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **Segurança**: python-dotenv para variáveis de ambiente
-- **Deploy**: Railway com deploy automático via GitHub
+- **Deploy**: fly.io com deploy automático via GitHub
 - **Estilo**: CSS Grid, Flexbox, Design Responsivo
 - **Servidor**: Gunicorn para produção
 
@@ -161,7 +161,7 @@ Contribuições são sempre bem-vindas! Sinta-se à vontade para:
 ## 📞 **Contato**
 
 **Desenvolvedor**: [C2002G](https://github.com/C2002G)  
-**Portfolio da Fotógrafa**: [Luiza Lopes](**https://luizalopesfotografia.up.railway.app/**)
+**Portfolio da Fotógrafa**: [Luiza Lopes](**https://luizalopes-portfolio.fly.dev/**)
 
 ---
 
