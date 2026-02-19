@@ -54,11 +54,6 @@ def home():
             "filtro": "museum",
             "descricao": "História colorada",
         },
-        "Torcida": {
-            "nome": "Torcida do Inter",
-            "filtro": "fans",
-            "descricao": "Paixão vermelha",
-        },
         "Renovação": {
             "nome": "Renovação",
             "filtro": "renovation",
